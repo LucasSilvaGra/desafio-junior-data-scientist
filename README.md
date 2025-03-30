@@ -28,4 +28,5 @@ Para executar o script SQL:
 
 Para visualizar o arquivo Power BI:
 - **Localmente:**
+  - Baixe o Arquivo Localizado no [Google Drive](https://drive.google.com/drive/folders/1WBozgxNS4hyE6-9XCfgyG76XIdSJfKcH?usp=drive_link) chamado `Chamados_1746.pbix`
   - Abra o arquivo `Chamados_1746.pbix` usando o Microsoft Power BI Desktop. As informações já estarão sendo exibidas automaticamente, com opções para interagir e explorar os dados visualmente.
