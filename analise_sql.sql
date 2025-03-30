@@ -51,7 +51,7 @@ SELECT
   COUNT(id_chamado) AS total_chamados
 FROM `datario.adm_central_atendimento_1746.chamado`
 WHERE DATE(data_inicio) BETWEEN DATE('2022-01-01') AND DATE('2023-12-31')
-AND LOWER(subtipo) like '%sossego%'
+AND id_subtipo = '5071'
 ORDER BY total_chamados DESC;
 
 -- Pergunta 7 
@@ -80,7 +80,7 @@ SELECT
 FROM `datario.adm_central_atendimento_1746.chamado` ch
 JOIN Eventos_Corrigidos AS ev
   ON (DATE(ch.data_inicio) BETWEEN ev.data_inicial AND ev.data_final)
-WHERE LOWER(ch.subtipo) LIKE '%sossego%'
+WHERE ch.id_subtipo = '5071'
   AND ev.evento != 'nan'
 ORDER BY ch.id_chamado;
 
@@ -107,7 +107,7 @@ SELECT
 FROM `datario.adm_central_atendimento_1746.chamado` ch
 JOIN Eventos_Corrigidos AS ev
   ON (DATE(ch.data_inicio) BETWEEN ev.data_inicial AND ev.data_final)
-WHERE LOWER(ch.subtipo) LIKE '%sossego%'
+WHERE ch.id_subtipo = '5071'
   AND ev.evento != 'nan'
 GROUP BY ev.evento
 ORDER BY total_chamados DESC;
@@ -135,7 +135,7 @@ SELECT
 FROM `datario.adm_central_atendimento_1746.chamado` ch
 JOIN Eventos_Corrigidos AS ev
   ON (DATE(ch.data_inicio) BETWEEN ev.data_inicial AND ev.data_final)
-WHERE LOWER(ch.subtipo) LIKE '%sossego%'
+WHERE ch.id_subtipo = '5071'
   AND ev.evento != 'nan'
 GROUP BY ev.evento
 ORDER BY media_diaria DESC
@@ -148,7 +148,7 @@ SELECT
   COUNT(id_chamado)/COUNT(DISTINCT(DATE(data_inicio))) AS media_diaria
 FROM `datario.adm_central_atendimento_1746.chamado`
 WHERE DATE(data_inicio) BETWEEN DATE('2022-01-01') AND DATE('2023-12-31')
-AND LOWER(subtipo) like '%sossego%'
+AND cid_subtipo = '5071'
 ORDER BY media_diaria DESC;
 
 -- Foram abertos 84 chamados por dia
